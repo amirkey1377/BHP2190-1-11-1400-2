@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BDF0BB3-B9E3-4A69-994E-3A43564CE395}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BHP2190</RootNamespace>
+    <AssemblyName>BHP2190</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>ddls\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LarcomAndYoung.Windows.Forms.ReSize, Version=4.1.1130.7807, Culture=neutral, PublicKeyToken=2ccc9fa17f463fce">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LarcomAndYoung.Windows.Forms.ReSize.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>ddls\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir">
+      <HintPath>..\..\..\Downloads\Compressed\chartdir_net\ChartDirector\lib\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>ddls\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="OFFICE, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c\OFFICE.DLL</HintPath>
+    </Reference>
+    <Reference Include="Sentinel.v3.5Client, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Sentinel.v3.5Client\3.5.0.0__b03f5f7f11d50a3a\Sentinel.v3.5Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.15.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.XLS.11.7.0\lib\net40\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=7.7.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.XLS.11.7.0\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=11.7.0.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.XLS.11.7.0\lib\net40\Spire.XLS.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\clasgraph.cs" />
+    <Compile Include="classes\clasMain.cs" />
+    <Compile Include="classes\clasPeak.cs" />
+    <Compile Include="classes\classglobal.cs" />
+    <Compile Include="classes\clasSmooth.cs" />
+    <Compile Include="classes\classmoothdelphi.cs" />
+    <Compile Include="classes\class_file.cs" />
+    <Compile Include="classes\class_params.cs" />
+    <Compile Include="classes\class_save_to_file.cs" />
+    <Compile Include="classes\class_usb.cs" />
+    <Compile Include="classes\DemoModule.cs" />
+    <Compile Include="classes\drawline_chart.cs" />
+    <Compile Include="classes\errors_cls.cs" />
+    <Compile Include="classes\methods.cs" />
+    <Compile Include="classes\movedata.cs" />
+    <Compile Include="classes\RunThread.cs" />
+    <Compile Include="classes\splineline.cs" />
+    <Compile Include="classes\zoomscrolldemo.cs" />
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmanalyseGraph2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmanalyseGraph2.designer.cs">
+      <DependentUpon>frmanalyseGraph2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmchangedimensions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmchangedimensions.designer.cs">
+      <DependentUpon>frmchangedimensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmColorSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmColorSelect.designer.cs">
+      <DependentUpon>frmColorSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmData.designer.cs">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmindata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmindata.designer.cs">
+      <DependentUpon>frmindata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmMath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMath.designer.cs">
+      <DependentUpon>frmMath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmMathematical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMathematical.designer.cs">
+      <DependentUpon>frmMathematical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmOption.designer.cs">
+      <DependentUpon>frmOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmRegister.designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmselectfiletype.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmselectfiletype.designer.cs">
+      <DependentUpon>frmselectfiletype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmselecttypeshow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmselecttypeshow.designer.cs">
+      <DependentUpon>frmselecttypeshow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmshowdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmshowdata.designer.cs">
+      <DependentUpon>frmshowdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmshowgraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmshowgraph.designer.cs">
+      <DependentUpon>frmshowgraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmShowPeaks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmShowPeaks.designer.cs">
+      <DependentUpon>frmShowPeaks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmSmoothing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSmoothing.designer.cs">
+      <DependentUpon>frmSmoothing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmstdAddition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmstdAddition.designer.cs">
+      <DependentUpon>frmstdAddition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmtempfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmtempfiles.designer.cs">
+      <DependentUpon>frmtempfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_analyse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_analyse.Designer.cs">
+      <DependentUpon>frm_analyse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_big_analys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_big_analys.designer.cs">
+      <DependentUpon>frm_big_analys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_copy_multi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_copy_multi.Designer.cs">
+      <DependentUpon>frm_copy_multi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_main.Designer.cs">
+      <DependentUpon>frm_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_math.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_math.designer.cs">
+      <DependentUpon>frm_math.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_setting.Designer.cs">
+      <DependentUpon>frm_setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_show_data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_show_data.designer.cs">
+      <DependentUpon>frm_show_data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.cs" />
+    <EmbeddedResource Include="forms\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmanalyseGraph2.resx">
+      <DependentUpon>frmanalyseGraph2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmchangedimensions.resx">
+      <DependentUpon>frmchangedimensions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmColorSelect.resx">
+      <DependentUpon>frmColorSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmData.resx">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmindata.resx">
+      <DependentUpon>frmindata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMath.resx">
+      <DependentUpon>frmMath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMathematical.resx">
+      <DependentUpon>frmMathematical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmOption.resx">
+      <DependentUpon>frmOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmselectfiletype.resx">
+      <DependentUpon>frmselectfiletype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmselecttypeshow.resx">
+      <DependentUpon>frmselecttypeshow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmshowdata.resx">
+      <DependentUpon>frmshowdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmshowgraph.resx">
+      <DependentUpon>frmshowgraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmShowPeaks.resx">
+      <DependentUpon>frmShowPeaks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSmoothing.resx">
+      <DependentUpon>frmSmoothing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmstdAddition.resx">
+      <DependentUpon>frmstdAddition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmtempfiles.resx">
+      <DependentUpon>frmtempfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_analyse.resx">
+      <DependentUpon>frm_analyse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_big_analys.resx">
+      <DependentUpon>frm_big_analys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_copy_multi.resx">
+      <DependentUpon>frm_copy_multi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_main.resx">
+      <DependentUpon>frm_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_math.resx">
+      <DependentUpon>frm_math.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_setting.resx">
+      <DependentUpon>frm_setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_show_data.resx">
+      <DependentUpon>frm_show_data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\NEW" />
+    <None Include="Resources\TOOL" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\start_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\start_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\start_hilight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\stop_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\stop_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\stop_hilight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\select_technich_cpc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\select_technich_cv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\button1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\button2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\1_cv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\2_ocp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\5_dpv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\6_swv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\7_lsv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\8_dcs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\9_dps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\10_cpc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\11_chp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\12_cha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\13_chc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\3_dcv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_menu\4_npv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\cv_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\cv_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\ocp_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\ocp_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\cha_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\cha_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\chc_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\chc_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\chp_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\chp_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\cpc_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\cpc_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dcs_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dcs_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dcv_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dcv_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dps_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dpv_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dpv_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\lsv_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\lsv_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\npv_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\npv_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\swv_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\swv_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\tech_btn\dps_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="forms\Actions-network-connect-icon1.png" />
+    <None Include="Properties\Resources\Exit.png" />
+    <None Include="Properties\Resources\Close.png" />
+    <Content Include="Resources\10.png" />
+    <Content Include="Resources\12.png" />
+    <Content Include="Resources\13.png" />
+    <Content Include="Resources\165.png" />
+    <Content Include="Resources\2000px-Tangent_to_a_curve.svg.png" />
+    <None Include="Resources\2000px-Tangent_to_a_curve.svg1.png" />
+    <Content Include="Resources\20651.jpg" />
+    <None Include="Resources\206511.jpg" />
+    <Content Include="Resources\20652.jpg" />
+    <None Include="Resources\206521.jpg" />
+    <Content Include="Resources\20653.jpg" />
+    <None Include="Resources\206531.jpg" />
+    <Content Include="Resources\20801.jpg" />
+    <None Include="Resources\208011.jpg" />
+    <Content Include="Resources\20802.jpg" />
+    <None Include="Resources\208021.jpg" />
+    <Content Include="Resources\20803.jpg" />
+    <None Include="Resources\208031.jpg" />
+    <Content Include="Resources\20805.jpg" />
+    <None Include="Resources\208051.jpg" />
+    <Content Include="Resources\20806.jpg" />
+    <None Include="Resources\208061.jpg" />
+    <Content Include="Resources\3.png" />
+    <Content Include="Resources\6.png" />
+    <Content Include="Resources\8.png" />
+    <Content Include="Resources\9 %282%29.png" />
+    <Content Include="Resources\9.png" />
+    <None Include="Resources\91.png" />
+    <Content Include="Resources\Actions-media-playback-pause-icon.png" />
+    <None Include="Resources\Actions-media-playback-pause-icon1.png" />
+    <Content Include="Resources\Actions-media-playback-start-icon.png" />
+    <None Include="Resources\Actions-media-playback-start-icon1.png" />
+    <Content Include="Resources\Actions-media-playback-stop-icon.png" />
+    <None Include="Resources\Actions-media-playback-stop-icon1.png" />
+    <Content Include="Resources\Actions-network-connect-icon.png" />
+    <None Include="Resources\Actions-network-connect-icon1.png" />
+    <Content Include="Resources\Actions-office-chart-line-icon.png" />
+    <None Include="Resources\Actions-office-chart-line-icon1.png" />
+    <None Include="Resources\Actions-office-chart-line-icon2.png" />
+    <Content Include="Resources\Actions-view-refresh-icon.png" />
+    <None Include="Resources\Actions-view-refresh-icon1.png" />
+    <None Include="Resources\Actions-view-refresh-icon2.png" />
+    <Content Include="Resources\activity_grid21600.png" />
+    <None Include="Resources\activity_grid216001.png" />
+    <Content Include="Resources\Adobe-PDF-Reader-Book-icon.png" />
+    <None Include="Resources\Adobe-PDF-Reader-Book-icon1.png" />
+    <Content Include="Resources\Analyze+panel+4B.jpg" />
+    <None Include="Resources\Analyze+panel+4B1.jpg" />
+    <Content Include="Resources\applications_32.png" />
+    <None Include="Resources\applications_321.png" />
+    <Content Include="Resources\Apps-background-icon.png" />
+    <None Include="Resources\Apps-background-icon1.png" />
+    <Content Include="Resources\Apps-Run-icon.png" />
+    <None Include="Resources\Apps-Run-icon1.png" />
+    <Content Include="Resources\Aqua-Smooth-Folder-Applications-icon.png" />
+    <None Include="Resources\Aqua-Smooth-Folder-Applications-icon1.png" />
+    <Content Include="Resources\ARROW3A.ICO" />
+    <Content Include="Resources\ArrowA.bmp" />
+    <None Include="Resources\ArrowA1.bmp" />
+    <Content Include="Resources\ArrowB.bmp" />
+    <None Include="Resources\ArrowB1.bmp" />
+    <Content Include="Resources\BANNER.ICO" />
+    <Content Include="Resources\BehpajoohArm.jpg" />
+    <None Include="Resources\BehpajoohArm1.JPG" />
+    <None Include="Resources\BehpajoohArm2.JPG" />
+    <Content Include="Resources\Beta_Icon.png" />
+    <None Include="Resources\Beta_Icon1.png" />
+    <Content Include="Resources\bgelec.jpg" />
+    <None Include="Resources\bgelec1.jpg" />
+    <Content Include="Resources\button_derivative.png" />
+    <None Include="Resources\button_derivative1.png" />
+    <Content Include="Resources\CAD3.bmp" />
+    <Content Include="Resources\CAD3.ICO" />
+    <None Include="Resources\CAD31.bmp" />
+    <Content Include="Resources\calc-icon.png" />
+    <None Include="Resources\calc-icon1.png" />
+    <Content Include="Resources\calculator.png" />
+    <Content Include="Resources\chart-add-icon.png" />
+    <None Include="Resources\chart-add-icon1.png" />
+    <Content Include="Resources\chart-line-delete-icon.png" />
+    <None Include="Resources\chart-line-delete-icon1.png" />
+    <Content Include="Resources\chart-line-icon.png" />
+    <None Include="Resources\chart-line-icon1.png" />
+    <Content Include="Resources\chart-search-icon.png" />
+    <None Include="Resources\chart-search-icon1.png" />
+    <Content Include="Resources\CHART03.ICO" />
+    <Content Include="Resources\checklist-icon.png" />
+    <None Include="Resources\checklist-icon1.png" />
+    <Content Include="Resources\CHEKLIST.ICO" />
+    <Content Include="Resources\Close.png" />
+    <None Include="Resources\Close1.png" />
+    <Content Include="Resources\color.png" />
+    <None Include="Resources\color1.png" />
+    <Content Include="Resources\COMM.JPG" />
+    <Content Include="Resources\comm1.bmp" />
+    <None Include="Resources\COMM1.JPG" />
+    <None Include="Resources\comm11.bmp" />
+    <Content Include="Resources\Comm2.png" />
+    <None Include="Resources\Comm21.png" />
+    <Content Include="Resources\confg_32.ico" />
+    <Content Include="Resources\CONNCT.ICO" />
+    <Content Include="Resources\cursor-icon.png" />
+    <None Include="Resources\cursor-icon1.png" />
+    <Content Include="Resources\delete-file-icon.png" />
+    <None Include="Resources\delete-file-icon1.png" />
+    <Content Include="Resources\Developer-icon.png" />
+    <None Include="Resources\Developer-icon1.png" />
+    <Content Include="Resources\dimensions_icon.png" />
+    <None Include="Resources\dimensions_icon1.png" />
+    <Content Include="Resources\DLL.png" />
+    <None Include="Resources\DLL1.png" />
+    <Content Include="Resources\Document-write-icon2.png" />
+    <None Include="Resources\Document-write-icon21.png" />
+    <Content Include="Resources\Document_Icon_Transparent-01.png" />
+    <None Include="Resources\Document_Icon_Transparent-011.png" />
+    <Content Include="Resources\DottedVert.gif" />
+    <None Include="Resources\DottedVert1.gif" />
+    <Content Include="Resources\DrawGraph.png" />
+    <None Include="Resources\DrawGraph1.png" />
+    <Content Include="Resources\edit_32.png" />
+    <None Include="Resources\edit_321.png" />
+    <Content Include="Resources\Exit.png" />
+    <None Include="Resources\Exit1.png" />
+    <Content Include="Resources\export-icon.png" />
+    <None Include="Resources\export-icon1.png" />
+    <Content Include="Resources\Export-To-Picture-Document-icon.png" />
+    <None Include="Resources\Export-To-Picture-Document-icon1.png" />
+    <Content Include="Resources\Export.png" />
+    <None Include="Resources\Export1.png" />
+    <Content Include="Resources\fastf_24.bmp" />
+    <Content Include="Resources\fastf_24.png" />
+    <None Include="Resources\fastf_241.bmp" />
+    <None Include="Resources\fastf_241.png" />
+    <Content Include="Resources\File-Adobe-Dreamweaver-XML-01-icon.png" />
+    <None Include="Resources\File-Adobe-Dreamweaver-XML-01-icon1.png" />
+    <Content Include="Resources\ForeColor.png" />
+    <Content Include="Resources\hard-disk_32.png" />
+    <None Include="Resources\hard-disk_321.png" />
+    <Content Include="Resources\HDF_grid.png" />
+    <None Include="Resources\HDF_grid1.png" />
+    <Content Include="Resources\Icon1.ico" />
+    <Content Include="Resources\Import.png" />
+    <None Include="Resources\Import1.png" />
+    <Content Include="Resources\integral.ico" />
+    <None Include="Resources\integral1.ico" />
+    <Content Include="Resources\Layer-Backward-icon.png" />
+    <None Include="Resources\Layer-Backward-icon1.png" />
+    <Content Include="Resources\Layer-Forward-icon.png" />
+    <None Include="Resources\Layer-Forward-icon1.png" />
+    <Content Include="Resources\Layers.ico" />
+    <None Include="Resources\Layers1.ico" />
+    <Content Include="Resources\LEONAR~1.ICO" />
+    <Content Include="Resources\libreoffice-math-icon.png" />
+    <None Include="Resources\libreoffice-math-icon1.png" />
+    <Content Include="Resources\Line-chart-icon.png" />
+    <Content Include="Resources\log-128.png" />
+    <None Include="Resources\log-1281.png" />
+    <Content Include="Resources\Log-Out-icon.png" />
+    <None Include="Resources\Log-Out-icon1.png" />
+    <Content Include="Resources\Logout-icon.png" />
+    <None Include="Resources\Logout-icon1.png" />
+    <Content Include="Resources\Mailbox-receive-message-2-icon.png" />
+    <None Include="Resources\Mailbox-receive-message-2-icon1.png" />
+    <Content Include="Resources\Marjouei.bmp" />
+    <None Include="Resources\Marjouei1.bmp" />
+    <Content Include="Resources\Mimetypes-application-vnd-ms-excel-icon.png" />
+    <None Include="Resources\Mimetypes-application-vnd-ms-excel-icon1.png" />
+    <Content Include="Resources\modify-key-icon.png" />
+    <None Include="Resources\modify-key-icon1.png" />
+    <Content Include="Resources\mximize.png" />
+    <Content Include="Resources\New.png" />
+    <None Include="Resources\New1.png" />
+    <Content Include="Resources\New2.png" />
+    <None Include="Resources\New21.png" />
+    <Content Include="Resources\new_24.bmp" />
+    <Content Include="Resources\new_241.bmp" />
+    <None Include="Resources\new_242.bmp" />
+    <None Include="Resources\new_2411.bmp" />
+    <Content Include="Resources\Notepad-Bloc-notes-icon.png" />
+    <None Include="Resources\Notepad-Bloc-notes-icon1.png" />
+    <Content Include="Resources\OK.bmp" />
+    <None Include="Resources\OK1.bmp" />
+    <None Include="Resources\OK2.bmp" />
+    <None Include="Resources\OK3.bmp" />
+    <Content Include="Resources\Open.png" />
+    <None Include="Resources\Open1.png" />
+    <Content Include="Resources\Open2.png" />
+    <None Include="Resources\Open21.png" />
+    <Content Include="Resources\Options.png" />
+    <None Include="Resources\Options1.png" />
+    <Content Include="Resources\Overlay.png" />
+    <None Include="Resources\Overlay1.png" />
+    <Content Include="Resources\Pause-icon.png" />
+    <None Include="Resources\Pause-icon1.png" />
+    <Content Include="Resources\Pause.png" />
+    <None Include="Resources\Pause1.png" />
+    <Content Include="Resources\pause_24.png" />
+    <None Include="Resources\pause_241.png" />
+    <Content Include="Resources\peak.png" />
+    <Content Include="Resources\pictures-icon %281%29.png" />
+    <None Include="Resources\pictures-icon %281%291.png" />
+    <Content Include="Resources\Pictures-icon.png" />
+    <None Include="Resources\Pictures-icon1.png" />
+    <Content Include="Resources\Play-icon.png" />
+    <None Include="Resources\Play-icon1.png" />
+    <Content Include="Resources\Port.png" />
+    <None Include="Resources\Port1.png" />
+    <Content Include="Resources\Port2.png" />
+    <None Include="Resources\Port21.png" />
+    <Content Include="Resources\print-icon.png" />
+    <None Include="Resources\print-icon1.png" />
+    <Content Include="Resources\product-icon.png" />
+    <None Include="Resources\product-icon1.png" />
+    <Content Include="Resources\Run.png" />
+    <None Include="Resources\Run1.png" />
+    <Content Include="Resources\Save-as-icon.png" />
+    <Content Include="Resources\Save.png" />
+    <None Include="Resources\Save1.png" />
+    <Content Include="Resources\Save2.png" />
+    <None Include="Resources\Save21.png" />
+    <Content Include="Resources\SaveAll.PNG" />
+    <None Include="Resources\SaveAll1.PNG" />
+    <Content Include="Resources\SaveAs.png" />
+    <None Include="Resources\SaveAs1.png" />
+    <Content Include="Resources\select-by-color-icon.png" />
+    <None Include="Resources\select-by-color-icon1.png" />
+    <Content Include="Resources\select_all_text_icon.jpg" />
+    <Content Include="Resources\select_all_text_icon1.jpg" />
+    <None Include="Resources\select_all_text_icon2.jpg" />
+    <None Include="Resources\select_all_text_icon11.jpg" />
+    <Content Include="Resources\SEO-icon.png" />
+    <None Include="Resources\SEO-icon1.png" />
+    <Content Include="Resources\ShowAxis.png" />
+    <None Include="Resources\ShowAxis1.png" />
+    <Content Include="Resources\ShowAxis2.png" />
+    <None Include="Resources\ShowAxis21.png" />
+    <Content Include="Resources\showgph.jpg" />
+    <None Include="Resources\showgph1.jpg" />
+    <Content Include="Resources\ShowLegend.png" />
+    <None Include="Resources\ShowLegend1.png" />
+    <Content Include="Resources\Signs-Help-icon.png" />
+    <None Include="Resources\Signs-Help-icon1.png" />
+    <Content Include="Resources\size-vertical-icon.png" />
+    <None Include="Resources\size-vertical-icon1.png" />
+    <Content Include="Resources\skipf_24.png" />
+    <None Include="Resources\skipf_241.png" />
+    <Content Include="Resources\Stop-icon.png" />
+    <None Include="Resources\Stop-icon1.png" />
+    <Content Include="Resources\Stop.png" />
+    <None Include="Resources\Stop1.png" />
+    <Content Include="Resources\Stop2.png" />
+    <None Include="Resources\Stop21.png" />
+    <Content Include="Resources\stop_32.png" />
+    <None Include="Resources\stop_321.png" />
+    <Content Include="Resources\wizard.gif" />
+    <None Include="Resources\wizard1.gif" />
+    <Content Include="Resources\write.png" />
+    <None Include="Resources\write1.png" />
+    <Content Include="Resources\zoom-in-icon.png" />
+    <None Include="Resources\zoom-in-icon1.png" />
+    <Content Include="Resources\Zoom-in-icon2.png" />
+    <None Include="Resources\Zoom-in-icon21.png" />
+    <Content Include="Resources\zoom-in.png" />
+    <None Include="Resources\zoom-in1.png" />
+    <Content Include="Resources\zoom-in2.png" />
+    <None Include="Resources\zoom-in21.png" />
+    <Content Include="Resources\zoom-in_32.png" />
+    <None Include="Resources\zoom-in_321.png" />
+    <Content Include="Resources\zoom-out-icon %281%29.png" />
+    <None Include="Resources\zoom-out-icon %281%291.png" />
+    <Content Include="Resources\Zoom-out-icon.png" />
+    <None Include="Resources\Zoom-out-icon1.png" />
+    <Content Include="Resources\zoom-out.png" />
+    <None Include="Resources\zoom-out1.png" />
+    <Content Include="Resources\zoomin.ico" />
+    <Content Include="Resources\Zoomout.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
